@@ -1,0 +1,110 @@
+.cta {
+  padding-top: clamp(2rem, 5vw, 3rem);
+}
+
+.cta__panel {
+  text-align: center;
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 26, 84, 0.75);
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 100%, rgba(0, 26, 84, 0.55) 0%, transparent 55%),
+    linear-gradient(160deg, #000000 0%, #001a54 100%);
+  box-shadow: 0 0 60px rgba(0, 26, 84, 0.25);
+}
+
+.cta__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.85rem;
+}
+
+.cta__sub {
+  color: var(--gray);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.cta__actions .btn-secondary {
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Explore RFS — white fill + ripple on hover */
+.cta__explore {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--blue);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  z-index: 0;
+}
+
+.cta__explore::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cta__explore-label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.35s var(--ease);
+}
+
+.cta__explore:hover {
+  background: var(--blue);
+  color: #000000;
+  border-color: #ffffff;
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+.cta__explore:hover::before {
+  transform: translate(-50%, -50%) scale(28);
+}
+
+.cta__explore:hover .cta__explore-label {
+  color: #000000;
+}
+
+.cta__explore:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta__explore::before {
+    transition: none;
+    display: none;
+  }
+
+  .cta__explore:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+}

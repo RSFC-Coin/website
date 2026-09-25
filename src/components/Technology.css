@@ -1,0 +1,43 @@
+.technology__grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+}
+
+.technology__card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.technology__card p {
+  font-size: 0.875rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
+
+.technology__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  margin-bottom: 1.15rem;
+  color: #7a9acc;
+  background: rgba(0, 26, 84, 0.35);
+  border: 1px solid rgba(0, 26, 84, 0.7);
+}
+
+@media (max-width: 860px) {
+  .technology__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .technology__grid {
+    grid-template-columns: 1fr;
+  }
+}
